@@ -66,7 +66,7 @@ class _DeviceAddState extends State<DeviceAdd> {
               elevation: 2,
               child: CustomPaint(
                 painter: BackgroundShape(
-                    backgroundColor: context.theme.backgroundColor),
+                    backgroundColor: context.theme.colorScheme.background),
                 child: const Center(
                   child: Text('aaaaaah'),
                 ),

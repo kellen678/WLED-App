@@ -32,11 +32,11 @@ class AddListItem extends StatelessWidget {
             children: [
               Text(
                 'WLED',
-                style: context.theme.textTheme.bodyText2,
+                style: context.theme.textTheme.bodyMedium,
               ),
               Text(
                 '192.168.0.191',
-                style: context.theme.textTheme.bodyText1,
+                style: context.theme.textTheme.bodyLarge,
               ),
             ],
           ),

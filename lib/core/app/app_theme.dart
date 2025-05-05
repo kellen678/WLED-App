@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wled/core/core.dart';
+import 'package:wled/core/core.dart'; // Assuming Kpadding is defined here or in another import
 
 abstract class AppTheme {
   static const _backgroundColor = Color(0xFF1D1D1D);
@@ -83,6 +83,7 @@ abstract class AppTheme {
     fontWeight: FontWeight.w400,
   );
 
+  // --- Start of the single, correct ThemeData definition ---
   static final theme = ThemeData(
     fontFamily: 'Nunito',
     scaffoldBackgroundColor: _backgroundColor,
@@ -103,8 +104,6 @@ abstract class AppTheme {
       elevation: 0,
       iconTheme: _iconTheme,
     ),
-    backgroundColor: _backgroundColor,
-    bottomAppBarColor: _backgroundColor,
     brightness: Brightness.dark,
     bottomAppBarTheme: const BottomAppBarTheme(
       color: _backgroundColor,
@@ -129,22 +128,17 @@ abstract class AppTheme {
     disabledColor: _subTitleColor,
     dividerColor: _subTitleColor,
     textTheme: const TextTheme(
-      subtitle1: _subTitleStyle,
-      subtitle2: _subTitleStyle,
-      headline1: _headerStyle,
-      headline2: _headerStyle,
-      headline3: _headerStyle,
-      headline4: _titleStyle,
-      headline5: _titleStyle,
-      headline6: _titleSmallStyle,
-      bodyText1: _bodyStyle,
-      bodyText2: _bodyStyleWhite,
-      button: _buttonStyle,
-    ),
-    colorScheme: const ColorScheme.dark(
-      primary: _titleColor,
-      secondary: Colors.grey,
-      background: _backgroundColor,
+      titleMedium: _subTitleStyle,
+      titleSmall: _subTitleStyle,
+      displayLarge: _headerStyle,
+      displayMedium: _headerStyle,
+      displaySmall: _headerStyle,
+      headlineMedium: _titleStyle,
+      headlineSmall: _titleStyle,
+      titleLarge: _titleSmallStyle,
+      bodyLarge: _bodyStyle,
+      bodyMedium: _bodyStyleWhite,
+      labelLarge: _buttonStyle,
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: _titleColor,
@@ -169,6 +163,7 @@ abstract class AppTheme {
       ),
     ),
     inputDecorationTheme: const InputDecorationTheme(
+      // Assuming Kpadding.small is defined correctly elsewhere
       contentPadding: EdgeInsets.all(Kpadding.small),
       alignLabelWithHint: true,
       errorBorder: OutlineInputBorder(
@@ -192,5 +187,18 @@ abstract class AppTheme {
       hintStyle: _hintStyle,
       focusColor: _cardColor,
     ),
+    colorScheme: const ColorScheme.dark(
+      primary: _titleColor,
+      secondary: Colors.grey, // Consider defining a specific secondary color
+      background: _backgroundColor,
+    ).copyWith(
+        background:
+            _backgroundColor), // .copyWith(background:...) is redundant here
   );
+  // --- End of the single, correct ThemeData definition ---
 }
+
+// Placeholder for Kpadding if it's not imported from core.dart
+// Remove this if Kpadding is correctly defined/imported
+
+

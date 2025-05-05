@@ -88,12 +88,12 @@ class DeviceListItem extends StatelessWidget {
                       children: [
                         Text(
                           device.info.name,
-                          style: theme.textTheme.headline4!
+                          style: theme.textTheme.headlineMedium!
                               .copyWith(color: textColor),
                         ),
                         Text(
                           device.info.ipAddress,
-                          style: theme.textTheme.subtitle1!
+                          style: theme.textTheme.titleMedium!
                               .copyWith(color: textColor),
                         )
                       ],
